@@ -36,14 +36,17 @@ extras = {"tests": _DEV_REQUIREMENTS, "dev": _DEV_REQUIREMENTS}
 setup(
     name='cbloss',
     version=get_version(),
-    packages=find_packages(exclude=["tests"]),
     license='MIT',
     description='PyTorch implementations of two popular loss functions for imbalanced classification problems: Class Balanced Loss and Focal Loss.',
     long_description=get_long_description(),
     long_description_content_type="text/markdown",
     author='Alok Pandey',
     url='https://github.com/wildoctopus/cbloss',
-    keywords=['pytorch', 'loss', 'class-balanced', 'classification-loss', 'focal-loss', 'FocalLoss', 'cb_loss', 'cbloss'],
+    packages=find_packages(exclude=["tests"]),
+    python_requires=">=3.7",
+    install_requires=get_requirements(),
+    extras_require=extras,
+    include_package_data=True,
     classifiers=[
         'Development Status :: 5 - Production/Stable',
         'Intended Audience :: Developers',
@@ -53,6 +56,12 @@ setup(
         'Programming Language :: Python :: 3.7',
         'Programming Language :: Python :: 3.8',
         'Programming Language :: Python :: 3.9',
+        "Topic :: Software Development :: Libraries",
+        "Topic :: Software Development :: Libraries :: Python Modules",
+        "Topic :: Education",
+        "Topic :: Scientific/Engineering",
+        "Topic :: Scientific/Engineering :: Artificial Intelligence",
     ],
-    install_requires=get_requirements(),
+    keywords=['pytorch', 'loss', 'class-balanced', 'classification-loss', 'focal-loss', 'FocalLoss', 'cb_loss', 'cbloss'],
+    
 )

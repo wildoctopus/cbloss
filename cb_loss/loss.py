@@ -44,19 +44,22 @@ class FocalLoss(nn.Module):
     Returns:
         Focal loss value.
     """
-    def __init__(self, alpha=1, gamma=2, reduction='mean'):
+    def __init__(self, num_classes, alpha=1, gamma=2, reduction='mean'):
         super(FocalLoss, self).__init__()
+        self.num_classes = num_classes
         self.alpha = alpha
         self.gamma = gamma
         self.reduction = reduction
 
     def forward(self, outputs, targets):
-        if len(targets.shape) == 1 or targets.shape[1] == 1:
+        if self.num_classes == 2:
             # binary classification problem
             ce_loss = F.binary_cross_entropy_with_logits(outputs, targets.float(), reduction='none')
-        else:
+        elif self.num_classes > 2:
             # multi-class classification problem
             ce_loss = F.cross_entropy(outputs, targets, reduction='none')
+        else:
+            raise ValueError(f"Invalid input value : {self.num_classes}. It should be equal or greater than 2.")
 
         pt = torch.exp(-ce_loss)
         focal_loss = (self.alpha * (1 - pt)**self.gamma * ce_loss)

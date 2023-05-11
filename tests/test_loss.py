@@ -1,6 +1,8 @@
-import torch
 import unittest
-from cb_loss.loss import FocalLoss, ClassBalancedLoss
+
+import torch
+
+from cb_loss.loss import ClassBalancedLoss, FocalLoss
 
 
 class TestLoss(unittest.TestCase):

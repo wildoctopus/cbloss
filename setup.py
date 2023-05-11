@@ -7,7 +7,7 @@ setup(
     license='MIT',
     description='PyTorch implementations of two popular loss functions for imbalanced classification problems: Class Balanced Loss and Focal Loss.',
     author='Alok Pandey',
-    url='https://github.com/yourusername/classbalancedloss-pypy',
+    url='https://github.com/wildoctopus/cbloss',
     keywords=['pytorch', 'loss', 'class-balanced', 'classification-loss', 'focal-loss', 'FocalLoss', 'cb_loss', 'cbloss'],
     classifiers=[
         'Development Status :: 3 - Alpha',

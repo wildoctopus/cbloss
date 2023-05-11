@@ -44,7 +44,8 @@ class FocalLoss(nn.Module):
     Returns:
         Focal loss value.
     """
-    def __init__(self, num_classes, alpha=1, gamma=2, reduction='mean'):
+
+    def __init__(self, num_classes, alpha=1, gamma=2, reduction="mean"):
         super(FocalLoss, self).__init__()
         self.num_classes = num_classes
         self.alpha = alpha
@@ -54,24 +55,23 @@ class FocalLoss(nn.Module):
     def forward(self, outputs, targets):
         if self.num_classes == 2:
             # binary classification problem
-            ce_loss = F.binary_cross_entropy_with_logits(outputs, targets.float(), reduction='none')
+            ce_loss = F.binary_cross_entropy_with_logits(outputs, targets.float(), reduction="none")
         elif self.num_classes > 2:
             # multi-class classification problem
-            ce_loss = F.cross_entropy(outputs, targets, reduction='none')
+            ce_loss = F.cross_entropy(outputs, targets, reduction="none")
         else:
             raise ValueError(f"Invalid input value : {self.num_classes}. It should be equal or greater than 2.")
 
         pt = torch.exp(-ce_loss)
-        focal_loss = (self.alpha * (1 - pt)**self.gamma * ce_loss)
-        if self.reduction == 'none':
-            return focal_loss 
-        if self.reduction == 'mean':
+        focal_loss = self.alpha * (1 - pt) ** self.gamma * ce_loss
+        if self.reduction == "none":
+            return focal_loss
+        if self.reduction == "mean":
             return focal_loss.mean()
-        elif self.reduction == 'sum':
+        elif self.reduction == "sum":
             return focal_loss.sum()
         else:
             raise ValueError(f"Invalid reduction method: {self.reduction}. Please use 'mean' or 'sum'.")
-        
 
 
 class ClassBalancedLoss(nn.Module):
@@ -131,7 +131,7 @@ class ClassBalancedLoss(nn.Module):
         self.samples_per_cls = samples_per_cls
         self.beta = beta
         self.num_classes = num_classes
-        self.device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+        self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
         self.loss_func = loss_func
 
         effective_num = 1.0 - np.power(beta, samples_per_cls)
@@ -151,7 +151,7 @@ class ClassBalancedLoss(nn.Module):
         Returns:
             The class-balanced loss as a scalar Tensor.
         """
-        if self.loss_func.reduction == 'none':
+        if self.loss_func.reduction == "none":
             base_loss = self.loss_func(logits, target)
             weights = self.weights.index_select(0, target)
             balanced_loss = (weights * base_loss).mean()

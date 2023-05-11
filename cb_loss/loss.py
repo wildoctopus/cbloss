@@ -31,6 +31,7 @@ class FocalLoss(nn.Module):
     - https://arxiv.org/pdf/1708.02002.pdf
 
     Args:
+        num_classes (int) : number of classes
         alpha (float): balancing parameter, default to 1.
         gamma (float): focusing parameter, default to 2.
         reduction (str): reduction method for the loss, either 'mean' or 'sum', default to 'mean'.

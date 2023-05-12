@@ -10,9 +10,9 @@
 </div>
 
 # cbloss (Class Balanced Loss)
-`cbloss` is a Python package that provides Pytorch implementation of - !["Class-Balanced Loss Based on Effective Number of Samples"](https://arxiv.org/abs/1901.05555).
+`cbloss` is a Python package that provides Pytorch implementation of - [Class-Balanced Loss Based on Effective Number of Samples](https://arxiv.org/abs/1901.05555).
 
-This package also includes Pytorch Implementation of ![Focal loss for dense object detection](https://arxiv.org/pdf/1708.02002.pdf) as `Focal Loss` is currently not avaialable in `torch.nn` module.
+This package also includes Pytorch Implementation of [Focal loss for dense object detection](https://arxiv.org/pdf/1708.02002.pdf) as `Focal Loss` is currently not avaialable in `torch.nn` module.
 
 
 
@@ -137,7 +137,7 @@ loss_fn = ClassBalancedLoss(samples_per_cls, beta=0.99, num_classes=3, loss_func
 # Contribution and Support
 
 
-Contributions, issues, and feature requests are welcome! Feel free to check out the ![issues page](https://github.com/wildoctopus/cbloss/issues) if you want to contribute.
+Contributions, issues, and feature requests are welcome! Feel free to check out the [issues page](https://github.com/wildoctopus/cbloss/issues) if you want to contribute.
 
 If you find any bugs or have any questions, please open an issue on the repository or contact me through the email listed in our profiles.
 

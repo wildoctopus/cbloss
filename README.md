@@ -1,5 +1,8 @@
 
-
+<div align="center">
+  <img src="cbloss.svg" alt="PyPI" >
+  
+</div>
 
 <div align="center">
   <img src="https://img.shields.io/pypi/v/cbloss" alt="PyPI" >

@@ -104,7 +104,7 @@ The `loss_func` parameter should be set to one of these base losses (FocalLoss, 
 If you have v0.1.0 installed, please use cb_loss.loss to import FocalLoss and ClassBalancedLoss.
 
 ```python
-from cbloss.loss import ClassBalancedLoss
+from cb_loss.loss import ClassBalancedLoss, FocalLoss
 
 samples_per_cls = [300, 200, 100] # an example case
 loss_func = nnCrossEntropyLoss(reduction = 'none')

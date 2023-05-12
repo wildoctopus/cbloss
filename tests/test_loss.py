@@ -2,7 +2,7 @@ import unittest
 
 import torch
 
-from cb_loss.loss import ClassBalancedLoss, FocalLoss
+from cbloss.loss import ClassBalancedLoss, FocalLoss
 
 
 class TestLoss(unittest.TestCase):

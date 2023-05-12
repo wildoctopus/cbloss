@@ -99,6 +99,21 @@ The `loss_func` parameter should be set to one of these base losses (FocalLoss, 
 `*** Please Note "reduction = 'none'" should be set for all base Loss Function, while using ClassBalancedLoss.` 
 
 
+## v0.1.0
+
+If you have v0.1.0 installed, please use cb_loss.loss to import FocalLoss and ClassBalancedLoss.
+
+```python
+from cbloss.loss import ClassBalancedLoss
+
+samples_per_cls = [300, 200, 100] # an example case
+loss_func = nnCrossEntropyLoss(reduction = 'none')
+
+loss_fn = ClassBalancedLoss(samples_per_cls, beta=0.99, num_classes=3, loss_func=loss_func)
+
+```
+
+
 # Citations
 ```
       @inproceedings{lin2017focal,

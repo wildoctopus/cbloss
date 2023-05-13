@@ -5,9 +5,9 @@
 </div>
 
 <div align="center">
-  <img src="https://img.shields.io/pypi/v/cbloss" alt="PyPI" >
-  <img src="https://github.com/wildoctopus/cbloss/actions/workflows/ci.yml/badge.svg" alt="Build Status">
-  <img src="https://static.pepy.tech/personalized-badge/cbloss?period=total&units=international_system&left_color=black&right_color=blue&left_text=Downloads" alt="Downloads">
+  <a href="https://pepy.tech/project/cbloss"><img src="https://img.shields.io/pypi/v/cbloss" alt="PyPI" ></a>
+  <a href="https://github.com/wildoctopus/cbloss/actions/workflows/ci.yml"><img src="https://github.com/wildoctopus/cbloss/actions/workflows/ci.yml/badge.svg" alt="Build Status"></a>
+  <a href="https://pepy.tech/project/cbloss"><img src="https://pepy.tech/badge/cbloss" alt="Downloads"></a>
   
 </div>
 
